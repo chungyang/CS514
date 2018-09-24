@@ -13,7 +13,7 @@ Wenting Wang 31930946
 
 """
 
-import cv2
+from scipy import misc
 import matplotlib.pyplot as plt
 import numpy as np
 from numpy.linalg import norm
@@ -54,7 +54,7 @@ def reconImg(image, pct):
 if __name__ == "__main__":
     # Read Image
     # (put the image file to the folder os.getcwd())
-    img = cv2.imread('image.jpg', 0)
+    img = misc.imread('image.jpg', 1)
     showImg(img) # show the input image
     
     percentages = [0.05, 0.10, 0.25, 0.50]

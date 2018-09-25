@@ -1,3 +1,5 @@
+Homework 1 - q3_27_README.txt
+
 The program basically works as following.
 
 Import the image

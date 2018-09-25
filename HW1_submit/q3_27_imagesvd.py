@@ -23,6 +23,7 @@ from q3_17_powersvd import powersvd # own svd function
 # Show input image
 def showImg(image):
     print('Input image:')
+    plt.figure(1)
     plt.imshow(image, cmap='gray')
     plt.title("The input image")
     plt.draw()
@@ -38,7 +39,6 @@ def reconImg(image, pct, figure_n):
     
     # Reconstruct
     idx = int(min(n,m) * pct)
-    print(idx)
     img_recon = u[:, :idx].dot(np.diag(s[:idx])).dot(vh[:idx,:])
     print('Use Top {:.0%} of the singular values.'.format(pct), '\n')
 
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     showImg(img) # show the input image
     
     percentages = [0.05, 0.10, 0.25, 0.50]
-    figure_n = 1
+    figure_n = 2
     for pct in percentages:
         reconImg(img, pct, figure_n) # show the reconstructed image
         figure_n += 1

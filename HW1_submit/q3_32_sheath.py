@@ -41,3 +41,4 @@ u,s,vt = powersvd(distance, 3, epsilon = 1e-5)
 
 # verification of SVD
 # u_actual, s_actual, vt_actual = np.linalg.svd(distance)
+

@@ -33,6 +33,8 @@ def powersvd(A, dimension, epsilon=1e-6):
     if m < dimension:
         raise ValueError("Column number of matrix must be no less than dimensions.")
 
+        
+
     # initialize a unit vector
     InitV = np.random.random((m, dimension))
     currentV = InitV/norm(InitV)

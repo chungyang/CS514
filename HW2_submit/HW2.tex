@@ -289,13 +289,13 @@ The code file: q10\_4\_2.py
 
 For the Laplacian matrix above, implement eigendecomposition, obtain the second-smallest eigenvalue is  0.69722436226800433, the corresponding vector is  [-0.15728598, -0.16666667, 0.29389153, -0.33333333, 0.28305594, -0.40824829,  0.50834187,  0.00210742, -0.48643259].
 
-The second eigenvector has four positive and five negative components, which suggests that one group should be \{C,E,G,H\}, the nodes with positive components; and the other group should be \{A,B,D,F,I\}, the nodes with positive components. 
+The second eigenvector has four positive and five negative components, which suggests that one group should be \{C, E, G, H\}, the nodes with positive components; and the other group should be \{A, B, D, F, I\}, the nodes with positive components. 
 
-%The partition is however unbalanced, shown on the graph, even by change the threshold. Check the eigendecomposition again, the third-smallest eigenvalue is 0.69722436226800577, which is very close to the second-smallest eigenvalue, the corresponding vector is [-0.36219431,  0.33333333, -0.38287473, -0.33333333  0.10413675, -0.40824829, -0.3923125,  0.23920786, -0.07430338]
+The partition is however unbalanced, even by changing the threshold. Check the eigendecomposition again, the third-smallest eigenvalue is 0.69722436226800577, which is very close to the second-smallest eigenvalue, the corresponding vector is [-0.36219431,  0.33333333, -0.38287473, -0.33333333  0.10413675, -0.40824829, -0.3923125,  0.23920786, -0.07430338]
 
-%Thus consider the second and the third vectors together, 
-  
-%[\textbf{Unsolved Question} (the third eigenvalue is very close to the second, and the partition above is rather unbalanced )]
+Thus consider the second and the third vectors together, the new partition is \{A, D, F, I\} (negative values in both vectors), \{B\} (negative in the second, positive in the third vector), \{C, G\} (positive in the second, negative in the third vector), \{E, H\} (positive in both vectors).
+
+The new partition is either balanced for the graph, further eigenvalues and vectors are ought to be considered.
   
 \section*{Coding Assignment}
 

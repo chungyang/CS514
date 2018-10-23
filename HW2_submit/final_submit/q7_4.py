@@ -63,27 +63,32 @@ np.random.seed(86)
 B = np.random.random(A.shape)
 print(' Matrix B ')
 print(B)
-# replace B's values 
-ones = B >= A
-B_replaced = ones * 1
-print(' Matrix B_replaced ')
-print(B_replaced)
-
+# replace A's values 
+A_replaced = np.copy(A)
+A_replaced[B>=A] = 1
+A_replaced[B<A] = 0
+plt.figure()
+plt.imshow(A_replaced)
+plt.title("Matrix A")
 
 np.set_printoptions(threshold=150)
 # random permutation
 np.random.seed(86)
-permutation = np.random.permutation(A.shape[0])
+permutation = np.random.permutation(A_replaced.shape[0])
 # shuffle rows
-A_shuffled = A[permutation]
+A_shuffled = A_replaced[permutation]
 # shuffle cols
 A_shuffled = A_shuffled[:,permutation]
+plt.figure()
+plt.imshow(A_shuffled)
+plt.title('A_permuted')
+
 inertia, labels = KMeans_fit(A_shuffled, n_clusters=3, random_state=86)
 # print clustering result to check if the clusters match natural clusters in A
 # each cluster should correspond to a block in A,
 # e.g. block1: row 0 to row 49, block2: row 50 to row 99
 for k in range(3):
-    # get indices of datapoints fell into cluster k in shuffled A 
+    # get indices of datapoints in cluster k in shuffled A 
     indices = labels == k
     # print original indices of those datapoints in A
     print('Cluster %d indices' %k)
@@ -97,6 +102,7 @@ for k in ks:
     sse, _ = KMeans_fit(A_shuffled, n_clusters=k, random_state=86)
     errors.append(sse)
 
+plt.figure()
 plt.plot(ks, errors)
 plt.xlabel('k')
 plt.xticks(ks)

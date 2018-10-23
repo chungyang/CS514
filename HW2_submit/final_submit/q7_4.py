@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Oct 22 23:15:44 2018
+
+@author: w
+"""
+
 import numpy as np
 from scipy.linalg import block_diag
 import matplotlib.pyplot as plt
@@ -103,9 +111,9 @@ for k in ks:
     errors.append(sse)
 
 plt.figure()
-plt.plot(ks, errors)
+plt.plot(ks, errors, marker='o', linestyle='--')
 plt.xlabel('k')
 plt.xticks(ks)
-plt.ylabel('SSE')
+plt.ylabel('Sum of squares')
 plt.title('KMeans k-SSE plot')
 plt.show()

@@ -306,9 +306,28 @@ The new partition is either balanced for the graph, further eigenvalues and vect
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=0.45]{kmeansSSE.png}
+	\includegraphics[scale=0.6]{figure2.png}
+	\caption{The k against sum of sqaures, k-means clustering}
 \end{figure}
-The plot of SSE vs k is shown above. The elbow point is at k=3, which means the dataset likely has 3 natural clusters.
+
+\textbf{(1)} Use the $numpy.random.seed(86)$ of module $numpy$ as permutation peudo-random number, to randomly distribute the matrix A. Apply the k-means algorithm to A with $k = 3$. The clusters and their indices are
+
+\
+
+First cluster indices: [61 55 59 84 72 53 69 91 87 74 51 81 50 98 85 89 94 90 80 77 54 86 83 79 71 97 62 82 95 63 52 75 70 68 58 88 73 56 60 92 57 93 65 66 67 64 78 76 99 96]
+
+Second cluster indices: [32 30  1  8 39  9 19 34 35 40 37 25 20 21 47  0 11 45  3 15  7 33  6 36 42 10 18 23 46 38 14 31  5 26 12 49 43  2 22 48 24 16  4 29 44 41 13 17
+ 27 28]
+
+Third cluster indices: [113 130 132 128 138 136 129 143 146 117 118 100 133 102 112 139 125 123 110 142 111 134 103 106 135 121 107 149 108 114 147 126 104 105 131 141 144 140 115 145 101 127 109 116 124 120 119 122 137 148]
+ 
+ \
+ 
+Since the first cluster contains data points with indices 50 to 99, the second cluster contains data points with indices 0 to 49 and the third cluster contains data points with indices 100 to 149, which are the same as the natural clusters of $A$, it finds the correct clusters.
+
+\
+
+\textbf{(2)} Apply the k-means algorithm to $A$ for $1 \leq k \leq 10$. The plot of the value of the sum of squares to the cluster centers versus k is in the Figure 2. Since the sum of square decreases abruptly at $k=3$, which is the elbow point, three is the correct value for $k$.
 
 
 \section*{Attachments}

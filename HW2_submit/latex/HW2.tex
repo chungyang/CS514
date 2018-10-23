@@ -296,12 +296,20 @@ The partition is however unbalanced, even by changing the threshold. Check the e
 Thus consider the second and the third vectors together, the new partition is \{A, D, F, I\} (negative values in both vectors), \{B\} (negative in the second, positive in the third vector), \{C, G\} (positive in the second, negative in the third vector), \{E, H\} (positive in both vectors).
 
 The new partition is either balanced for the graph, further eigenvalues and vectors are ought to be considered.
-  
+
+\newpage  
 \section*{Coding Assignment}
 
 \subsection*{7.4}
 
-The code file q7\_4.py
+[See Python file q7\_4.py]\newline
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.45]{kmeansSSE.png}
+\end{figure}
+The plot of SSE vs k is shown above. The elbow point is at k=3, which means the dataset likely has 3 natural clusters.
+
 
 \section*{Attachments}
 

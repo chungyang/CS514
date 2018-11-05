@@ -1,0 +1,13 @@
+Run FM.py to see the result.
+
+Flajolet-Martin algorithm is implemented as follow
+
+1, Upon being initialized, it calculates a prime number between (9999, 2*9999)
+
+2, pick two randoms numbers a and b from (1, p-1)
+
+3, For every incoming data d, calculate (a * d + b) % p
+
+4, calculate min hash value
+
+5, approximate the number of distinct values by (10000 / min hash) when function approximate() is called, for min hash = 0, return 10000

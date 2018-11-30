@@ -84,13 +84,13 @@ class count_min_sketch:
 import heapq
 h = []
 # Minimum frequency to be considered as a heavy hitter
-k = 5
+k = 30
 c = count_min_sketch(epislon = 0.1, delta = 0.1)
 total_count = 0
 
-for i in range(20):
+for i in range(10000):
 
-    data = np.random.randint(0, 10)
+    data = np.random.randint(0, 499)
 
     c.listen(data)
 
